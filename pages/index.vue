@@ -2,11 +2,11 @@
 import Image from '~/types/image';
 import Post from '~/types/post';
 
-const posts = [
-  new Post('Tree 1', new Image('/1', 'Tree 1 image', 'A photo of tree 1', (new Date()).toString()), 'Such a great tree'),
-  new Post('Tree 1', new Image('/2', 'Tree 2 image', 'A photo of tree 2', (new Date()).toString()), 'Such a wonderful tree'),
-  new Post('Tree 1', new Image('/3', 'Tree 3 image', 'A photo of tree 3', (new Date()).toString()), 'Such a magnificent tree'),
-]
+const posts = ref([
+  new Post('Tree 1', new Image('https://localhost:3000/1.jpeg', 'Tree 1 image', 'A photo of tree 1', (new Date()).toString()), 'Such a great tree'),
+  new Post('Tree 1', new Image('https://localhost:3000/2jpeg', 'Tree 2 image', 'A photo of tree 2', (new Date()).toString()), 'Such a wonderful tree'),
+  new Post('Tree 1', new Image('https://localhost:3000/3.jpeg', 'Tree 3 image', 'A photo of tree 3', (new Date()).toString()), 'Such a magnificent tree'),
+])
 </script>
 
 <template>

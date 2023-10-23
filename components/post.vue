@@ -12,7 +12,7 @@ const showReplyForm = ref(false)
 
 <template>
   <p>{{ localPost.title }}<p/>
-  <img :src="localPost.image.link" @click="() => { showImage = true} ">
+  <img class="max-w-15 max-h-15" :src="localPost.image.link" @click="() => { showImage = true} ">
   <p>{{ localPost.content }}</p>
   <button title="Оставить отзыв" @click="() => { showReplyForm = true}">Оставить отзыв</button>
   <reply v-for="reply in localPost.replies" :reply="reply" />
