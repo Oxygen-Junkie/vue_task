@@ -44,7 +44,7 @@ function postReply() {
                           class="block appearance-none w-full h-50 py-1 px-2 mb-1 text-base leading-normal bg-white text-grey-darker border border-grey rounded"
                           placeholder="Введите текст отзыва"
                         />
-                        <button title="Разместить отзыв" @click="postReply()" />
+                        <button title="Разместить отзыв" class="inline-flex text-center text-white p-1 font-semibold text-sm align-baseline leading-none rounded bg-green-500" @click="postReply()" />
                     </div>
                 </div>
             </transition>

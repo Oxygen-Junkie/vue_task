@@ -1,8 +1,13 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  srcDir: 'src/',
   modules: [
       '@nuxtjs/tailwindcss'
   ],
+  tailwindcss: {
+    cssPath: '~/assets/css/input.css',
+    configPath: "tailwind.config"
+  },
   app: {
     head: {
       title: 'NuxtVueTest',
