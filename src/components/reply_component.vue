@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import Post from '../types/post'
 import Reply from '../types/reply'
+import reply_component from './reply_component.vue'
+import createReply_modal from './createReply_modal.vue'
+import { ref } from 'vue';
 
 const props = defineProps<{ reply: Reply; noReplying?: boolean }>()
 const localReply = props.reply
@@ -10,6 +13,6 @@ const showReplyForm = ref(false)
 <template>
   <p>{{ localReply.comment }}</p>
   <button v-if="!props.noReplying" title="Оставить отзыв" @click="() => { showReplyForm = true}">Оставить отзыв</button>
-  <reply v-for="reply in localReply.childReplies" :reply="reply" :noReplying="true" />
+  <reply_component v-for="reply in localReply.childReplies" :reply="reply" :noReplying="true" />
   <createReply_modal v-if="showReplyForm && !props.noReplying" @close="() => { showReplyForm = false }" @postReply="(reply: Reply) => { localReply.childReplies.push(reply); showReplyForm = false; }" />
 </template>

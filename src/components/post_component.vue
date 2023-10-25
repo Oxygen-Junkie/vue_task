@@ -4,6 +4,7 @@ import Reply from '../types/reply'
 import reply_component from './reply_component.vue'
 import image_modal from './image_modal.vue'
 import createReply_modal from './createReply_modal.vue'
+import { ref } from 'vue'
 
 const props = defineProps<{ post: Post }>()
 const localPost = props.post

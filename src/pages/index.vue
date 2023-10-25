@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import Image from '../types/image'
 import Post from '../types/post'
+import post_component from '../components/post_component.vue'
 
 const posts = ref([
   new Post('Tree 1', new Image('https://localhost:3000/1.jpeg', 'Tree 1 image', 'A photo of tree 1', (new Date()).toString()), 'Such a great tree'),
@@ -10,5 +12,5 @@ const posts = ref([
 </script>
 
 <template>
-  <post v-for="post in posts" :post="post"/>
+  <post_component v-for="post in posts" :post="post"/>
 </template>
