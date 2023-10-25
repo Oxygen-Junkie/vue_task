@@ -22,7 +22,7 @@ const showReplyForm = ref(false)
       <label class="font-semibold mb-1">{{ localPost.title }}</label>
       <p class="mb-1">{{ localPost.content }}</p>
       <button class="inline-flex text-center text-white p-1 font-semibold text-sm align-baseline leading-none rounded bg-green-500" title="Оставить отзыв под этим постом" @click="() => { showReplyForm = true}">Оставить отзыв под этим постом</button>
-      <reply_component v-for="reply in localPost.replies" :reply="reply" />
+      <reply_component v-for="reply in localPost.replies" :reply="reply" class="m-2" />
     </div>
   </div>
   <image_modal v-if="showImage" @close="() => { showImage = false }" :image="localPost.image" />
