@@ -10,17 +10,17 @@ const props = defineProps<{ image: Image }>()
 
 <template>
   <teleport to="body">
-      <div class="fixed center z-999">
+      <div class="fixed border-white center z-999">
           <transition name="modal">
               <div>
-                  <div class="bg-green rounded-t-md dark:bg-purple-700">
+                  <div class="bg-green-500 rounded-t-md">
                       <div class="text-right mr-2">
                         <button title="Закрыть окно" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" @click.prevent="() => { emit('close') }">
                             <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
                         </button>
                       </div>
                   </div>
-                  <div class="card-container rounded-b-md bg-gray-200 dark:bg-gray-500">
+                  <div class="card-container rounded-b-md bg-gray-200">
                     <label class="font-semibold mb-1">{{ props.image.name }}</label>
                     <img class="max-h-40 max-w-40" :src="props.image.link">
                     <p class="mb-1">{{ props.image.date }}</p>
