@@ -10,12 +10,7 @@ const props = defineProps<{ image: Image }>()
 
 <template>
   <teleport to="body">
-    <transition name="fade">
-      <div class="modal-overlay" @click="emit('close')" />
-    </transition>
-  </teleport>
-  <teleport to="body">
-      <div class="fixed center z-901">
+      <div class="fixed center z-999">
           <transition name="modal">
               <div>
                   <div class="bg-green rounded-t-md dark:bg-purple-700">
@@ -70,7 +65,7 @@ const props = defineProps<{ image: Image }>()
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 900;
+    z-index: 1;
     opacity: 0.9;
     background: #2c3e50;
     cursor: pointer;

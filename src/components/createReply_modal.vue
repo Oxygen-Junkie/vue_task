@@ -20,11 +20,6 @@ function postReply() {
 
 <template>
     <teleport to="body">
-        <transition name="fade">
-        <div class="modal-overlay" @click="emit('close')" />
-        </transition>
-    </teleport>
-    <teleport to="body">
         <div class="fixed center z-901">
             <transition name="modal">
                 <div>

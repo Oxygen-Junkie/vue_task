@@ -14,9 +14,9 @@ const showReplyForm = ref(false)
 </script>
 
 <template>
-  <div class="flex bg-grey-400 shadow rounded m-5">
-    <div>
-      <img class="max-w-15 max-h-15 cursor-pointer" :src="localPost.image.link" @click="() => { showImage = true} ">
+  <div class="flex bg-slate-200 shadow rounded p-1 m-5">
+    <div class="mr-3">
+      <img class="w-15 h-15 cursor-pointer" :src="localPost.image.link" @click="() => { showImage = true} ">
     </div>
     <div class="text-left">
       <label class="font-semibold mb-1">{{ localPost.title }}</label>
