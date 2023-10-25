@@ -1,10 +1,7 @@
 {
     "cSpell.words": [
-        "iconify",
-        "nuxt",
+        "Nuxt",
         "nuxtjs",
-        "pinia",
-        "tailwindcss",
-        "unplugin"
+        "tailwindcss"
     ]
 }

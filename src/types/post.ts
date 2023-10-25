@@ -5,11 +5,12 @@ export default class Post {
   title: string
   image: Image
   content: string
-  reply: Reply[] | undefined
+  replies: Reply[]
 
   constructor(title: string, image: Image, content: string) {
     this.title = title
     this.image = image
     this.content = content
+    this.replies = []
   }
 }

@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import Post from '~/types/post'
-import Image_modal from './image_modal.vue';
-import Reply from '~/types/reply';
+import Post from '../types/post'
+import Reply from '../types/reply'
+import reply_component from './reply_component.vue'
+import image_modal from './image_modal.vue'
+import createReply_modal from './createReply_modal.vue'
 
 const props = defineProps<{ post: Post }>()
 const localPost = props.post
@@ -11,11 +13,11 @@ const showReplyForm = ref(false)
 </script>
 
 <template>
-  <p>{{ localPost.title }}<p/>
+  <p>{{ localPost.title }}</p>
   <img class="max-w-15 max-h-15" :src="localPost.image.link" @click="() => { showImage = true} ">
   <p>{{ localPost.content }}</p>
   <button title="Оставить отзыв" @click="() => { showReplyForm = true}">Оставить отзыв</button>
-  <reply v-for="reply in localPost.replies" :reply="reply" />
-  <image_modal v-if="showImage" @close="() => { showImage = false }" />
+  <reply_component v-for="reply in localPost.replies" :reply="reply" />
+  <image_modal v-if="showImage" @close="() => { showImage = false }" :image="localPost.image" />
   <createReply_modal v-if="showReplyForm" @close="() => { showReplyForm = false }" @postReply="(reply: Reply) => { localPost.replies.push(reply); showReplyForm = false; }" />
 </template>

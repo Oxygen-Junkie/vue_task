@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Image from '../types/image'
 
 const emit = defineEmits<{
   (event: 'close'): void;
@@ -19,13 +20,13 @@ const props = defineProps<{ image: Image }>()
               <div>
                   <div class="bg-green rounded-t-md dark:bg-purple-700">
                       <div class="text-right mr-2">
-                      <button title="Закрыть окно" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" @click.prevent="() => { emit('close') }">
-                          <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
-                      </button>
+                        <button title="Закрыть окно" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" @click.prevent="() => { emit('close') }">
+                            <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
+                        </button>
                       </div>
                   </div>
                   <div class="card-container rounded-b-md bg-gray-200 dark:bg-gray-500">
-                    <p>{{ props.image.name }}<p/>
+                    <p>{{ props.image.name }}</p>
                     <img :src="props.image.link">
                     <p>{{ props.image.date }}</p>
                     <p>{{ props.image.description }}</p>

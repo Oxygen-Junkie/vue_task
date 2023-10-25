@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Reply from '~/types/reply';
+import Reply from '../types/reply'
 
 
 const emit = defineEmits<{
   (event: 'close'): void;
-  (event: 'postReply', reply: Reply): void
+  (event: 'postReply', reply: Reply): void;
 }>()
 
 const reply = ref(new Reply())
