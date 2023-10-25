@@ -20,8 +20,9 @@ function postReply() {
 
 <template>
     <teleport to="body">
-        <div class="fixed center z-901">
-            <transition name="modal">
+      <div class="modal-overlay" @click.prevent="() => { emit('close') }">
+        <div class="fixed center z-999">
+          <transition name="modal">
                 <div>
                     <div class="bg-green-500 rounded-t-md">
                         <div class="text-right mr-2">
@@ -43,6 +44,7 @@ function postReply() {
                     </div>
                 </div>
             </transition>
+          </div>
         </div>
     </teleport>
 </template>
@@ -80,7 +82,7 @@ function postReply() {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 900;
+    z-index: 200;
     opacity: 0.9;
     background: #2c3e50;
     cursor: pointer;

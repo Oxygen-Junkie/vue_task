@@ -10,25 +10,27 @@ const props = defineProps<{ image: Image }>()
 
 <template>
   <teleport to="body">
+    <div class="modal-overlay" @click.prevent="() => { emit('close') }">
       <div class="fixed center z-999">
-          <transition name="modal">
-              <div>
-                  <div class="bg-green-500 rounded-t-md">
-                      <div class="text-right mr-2">
-                        <button title="Закрыть окно" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" @click.prevent="() => { emit('close') }">
-                            <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
-                        </button>
-                      </div>
-                  </div>
-                  <div class="card-container rounded-b-md bg-green-100">
-                    <label class="font-semibold mb-1">{{ props.image.name }}</label>
-                    <img class="max-h-40 max-w-40" :src="props.image.link">
-                    <small class="mb-1">{{ props.image.date }}</small>
-                    <p class="mb-1">{{ props.image.description }}</p>
-                  </div>
-              </div>
-          </transition>
-      </div>
+        <transition name="modal">
+            <div>
+                <div class="bg-green-500 rounded-t-md">
+                    <div class="text-right mr-2">
+                      <button title="Закрыть окно" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" @click.prevent="() => { emit('close') }">
+                          <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
+                      </button>
+                    </div>
+                </div>
+                <div class="card-container rounded-b-md bg-green-100">
+                  <label class="font-semibold mb-1">{{ props.image.name }}</label>
+                  <img class="max-h-40 max-w-40" :src="props.image.link">
+                  <small class="mb-1">{{ props.image.date }}</small>
+                  <p class="mb-1">{{ props.image.description }}</p>
+                </div>
+            </div>
+        </transition>
+    </div>
+    </div>
   </teleport>
 </template>
 
@@ -60,12 +62,11 @@ const props = defineProps<{ image: Image }>()
 .modal-overlay {
     content: '';
     position: absolute;
-    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
+    z-index: 200;
     opacity: 0.9;
     background: #2c3e50;
     cursor: pointer;
