@@ -16,11 +16,11 @@ const showReplyForm = ref(false)
 <template>
   <div class="flex bg-grey-400 shadow rounded m-5">
     <div>
-      <img class="max-w-15 max-h-15" :src="localPost.image.link" @click="() => { showImage = true} ">
+      <img class="max-w-15 max-h-15 cursor-pointer" :src="localPost.image.link" @click="() => { showImage = true} ">
     </div>
     <div class="text-left">
-      <label class="font-semibold">{{ localPost.title }}</label>
-      <p>{{ localPost.content }}</p>
+      <label class="font-semibold mb-1">{{ localPost.title }}</label>
+      <p class="mb-1">{{ localPost.content }}</p>
       <button class="inline-flex text-center text-white p-1 font-semibold text-sm align-baseline leading-none rounded bg-green-500" title="Оставить отзыв под этим постом" @click="() => { showReplyForm = true}">Оставить отзыв под этим постом</button>
       <reply_component v-for="reply in localPost.replies" :reply="reply" />
     </div>

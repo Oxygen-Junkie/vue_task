@@ -26,10 +26,10 @@ const props = defineProps<{ image: Image }>()
                       </div>
                   </div>
                   <div class="card-container rounded-b-md bg-gray-200 dark:bg-gray-500">
-                    <p>{{ props.image.name }}</p>
-                    <img :src="props.image.link">
-                    <p>{{ props.image.date }}</p>
-                    <p>{{ props.image.description }}</p>
+                    <label class="font-semibold mb-1">{{ props.image.name }}</label>
+                    <img class="max-h-40 max-w-40" :src="props.image.link">
+                    <p class="mb-1">{{ props.image.date }}</p>
+                    <p class="mb-1">{{ props.image.description }}</p>
                   </div>
               </div>
           </transition>

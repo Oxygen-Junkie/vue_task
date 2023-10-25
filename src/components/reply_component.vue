@@ -12,7 +12,7 @@ const showReplyForm = ref(false)
 
 <template>
   <div class="p-1 rounded bg-grey-500 mb-3">
-    <p>{{ localReply.comment }}</p>
+    <p class="mb-1">{{ localReply.comment }}</p>
     <button v-if="!props.noReplying" title="Оставить отзыв под этим отзывом" class="inline-flex text-center text-white p-1 font-semibold text-sm align-baseline leading-none rounded bg-yellow-500" @click="() => { showReplyForm = true}">Оставить отзыв под этим отзывом</button>
     <reply_component v-for="reply in localReply.childReplies" :reply="reply" :noReplying="true" />
     <createReply_modal v-if="showReplyForm && !props.noReplying" @close="() => { showReplyForm = false }" @postReply="(reply: Reply) => { localReply.childReplies.push(reply); showReplyForm = false; }" />
