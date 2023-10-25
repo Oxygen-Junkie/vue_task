@@ -10,7 +10,7 @@ const props = defineProps<{ image: Image }>()
 
 <template>
   <teleport to="body">
-      <div class="fixed border-white center z-999">
+      <div class="fixed center z-999">
           <transition name="modal">
               <div>
                   <div class="bg-green-500 rounded-t-md">
@@ -20,10 +20,10 @@ const props = defineProps<{ image: Image }>()
                         </button>
                       </div>
                   </div>
-                  <div class="card-container rounded-b-md bg-gray-200">
+                  <div class="card-container rounded-b-md bg-green-100">
                     <label class="font-semibold mb-1">{{ props.image.name }}</label>
                     <img class="max-h-40 max-w-40" :src="props.image.link">
-                    <p class="mb-1">{{ props.image.date }}</p>
+                    <small class="mb-1">{{ props.image.date }}</small>
                     <p class="mb-1">{{ props.image.description }}</p>
                   </div>
               </div>
